@@ -18,8 +18,11 @@ import java.util.List;
 @Api(tags = "Sectors Resources")
 public class SectorResource {
 
-    @Autowired
-    private SectorService service;
+    private final SectorService service;
+
+    public SectorResource(SectorService service){
+        this.service = service;
+    }
 
     @GetMapping
     @ApiOperation("Find all sectors")

@@ -22,8 +22,11 @@ import java.util.stream.Collectors;
 @Service
 public class RoleService {
 
-    @Autowired
-    private RoleRepository repository;
+    private final RoleRepository repository;
+
+    public RoleService(RoleRepository repository){
+        this.repository = repository;
+    }
 
     @Autowired
     private SectorRepository sectorRepository;

@@ -18,8 +18,11 @@ import java.util.List;
 @Api(tags = "Roles Resources")
 public class RoleResource {
 
-    @Autowired
-    private RoleService service;
+    private final RoleService service;
+
+    public RoleResource(RoleService service){
+        this.service = service;
+    }
 
     @GetMapping
     @ApiOperation("Find all roles")

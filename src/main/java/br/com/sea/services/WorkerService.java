@@ -23,8 +23,11 @@ import java.util.stream.Collectors;
 @Service
 public class WorkerService {
 
-    @Autowired
-    private WorkerRepository repository;
+    private final WorkerRepository repository;
+
+    public WorkerService(WorkerRepository repository){
+        this.repository = repository;
+    }
 
     @Transactional(readOnly = true)
     public List<WorkerDTO> findAll() {

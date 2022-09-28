@@ -19,8 +19,11 @@ import java.util.List;
 @Api(tags = "Workers Resources")
 public class WorkerResource {
 
-    @Autowired
-    private WorkerService service;
+    private final WorkerService service;
+
+    public WorkerResource(WorkerService service){
+        this.service = service;
+    }
 
     @GetMapping
     @ApiOperation("Find all workers")

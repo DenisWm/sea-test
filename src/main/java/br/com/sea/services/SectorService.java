@@ -19,8 +19,11 @@ import java.util.stream.Collectors;
 @Service
 public class SectorService {
 
-    @Autowired
-    private SectorRepository repository;
+    private final SectorRepository repository;
+
+    public SectorService(SectorRepository repository){
+        this.repository = repository;
+    }
 
     @Transactional(readOnly = true)
     public List<SectorDTO> findAll() {
